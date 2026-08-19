@@ -1,0 +1,94 @@
+---
+title: "Using a template"
+subtitle: "Copy one file, replace one block, rewrite the slides."
+description: "How to take a carousel template out of the gallery and turn it into your own release deck."
+---
+
+A template is a single Typst file.
+It imports nothing and depends on no package, so a copy of it is complete.
+
+## What you need
+
+[Typst](https://typst.app/docs) and the fonts the template names.
+
+If you already have [Quarto](https://quarto.org), you have Typst: `quarto typst` runs the copy it ships, and takes the same arguments as the commands below.
+
+The gallery vendors its fonts so that a clone renders identically anywhere.
+If you work inside a clone, point Typst at them:
+
+```bash
+typst compile --font-path fonts --ignore-system-fonts carousel.typ carousel.pdf
+```
+
+If you copy a template into your own project instead, install the fonts it names, or change the three font bindings to families you already have.
+Typst reports a missing family as a warning and carries on with a fallback face, so a deck can compile cleanly and still be set in the wrong type.
+Read the output, do not just read the exit code.
+
+## Copy it
+
+Take the whole directory, or just the file:
+
+```bash
+curl -O https://raw.githubusercontent.com/mcanouil/typst-carousel-gallery/main/templates/editorial/drop-cap/carousel.typ
+```
+
+Every template's page has a download link for the same file.
+
+## Replace the project block
+
+The top of every file carries the only part you have to change:
+
+```typst
+// --- PROJECT (replace these) ---
+#let project = "Acme Kit"
+#let version = "2.1.0"
+#let repo-url = "https://github.com/mcanouil/typst-carousel-gallery"
+#let date = "2026-01-01"
+```
+
+Change the document title on the line above it too.
+
+## Rewrite the slides
+
+Under `// --- SLIDES ---` there are six blocks, in this order: a cover, four content slides, and a closing slide with the links.
+Keep the shape and change the words.
+
+Two rules are worth keeping even when you change everything else.
+
+Body text stays at 14 pt or larger, because a slide has to survive being shown at about 250 pixels wide in a feed.
+Every URL a reader can see stays wrapped in `#link()`, because a bare URL in a PDF is dead text they would have to retype.
+
+The [reference](reference.qmd) lists the bindings and helpers every template shares, so you know what a name means before you change it.
+
+## Change the palette
+
+The theme block binds eight colours.
+Swapping those eight is usually enough to move a deck onto a different palette without touching a single slide:
+
+```typst
+// --- THEME ---
+#let ground = rgb("#f6f1e7")   // page fill
+#let paper = rgb("#fffdf7")    // light panel
+#let ink = rgb("#221d16")      // body text
+#let muted = rgb("#7a6f5d")    // secondary text
+#let hair = rgb("#d9cdb5")     // rules and borders
+#let accent = rgb("#b5830a")   // the one accent
+#let slab = rgb("#221d16")     // code background
+#let slab-fg = rgb("#f0e7d5")  // code foreground
+```
+
+## Build it
+
+```bash
+typst compile carousel.typ carousel.pdf
+```
+
+For the images the platforms prefer, ask Typst for one file per slide:
+
+```bash
+typst compile --format png --ppi 144 carousel.typ 'slide-{p}.png'
+```
+
+Then look at every slide before posting.
+A clean compile only proves the page did not overflow.
+Content inside a fixed-height block draws straight over the footer and still exits 0.

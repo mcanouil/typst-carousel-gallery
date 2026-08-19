@@ -1,0 +1,38 @@
+# Vendored font manifest.
+#
+# One row per family. Tab-separated, three columns:
+#   1. Family directory under fonts/, and the name Typst matches on.
+#   2. Directory under github.com/google/fonts, which also holds OFL.txt.
+#   3. Semicolon-separated file names to fetch from that directory.
+#      Semicolon, not comma: variable font names carry commas between axes,
+#      as in Archivo[wdth,wght].ttf.
+#
+# Variable fonts carry their whole weight axis in one file, so they need one
+# entry. Typst 0.15 reads the axis and honours `weight:` across its full range.
+# Static families list only the weights a template names. No italics: no
+# template uses one.
+#
+# tools/fetch-fonts.sh reads this file. Every family here is under the SIL Open
+# Font License 1.1. The licence text travels with the files in fonts/LICENCES/.
+#
+# family	source	files
+Archivo	archivo	Archivo[wdth,wght].ttf
+Bangers	bangers	Bangers-Regular.ttf
+Comic Neue	comicneue	ComicNeue-Regular.ttf;ComicNeue-Bold.ttf
+EB Garamond	ebgaramond	EBGaramond[wght].ttf
+Fira Code	firacode	FiraCode[wght].ttf
+Fira Sans	firasans	FiraSans-Regular.ttf;FiraSans-Medium.ttf;FiraSans-Bold.ttf
+Fraunces	fraunces	Fraunces[SOFT,WONK,opsz,wght].ttf
+IBM Plex Mono	ibmplexmono	IBMPlexMono-Regular.ttf;IBMPlexMono-Medium.ttf;IBMPlexMono-Bold.ttf
+IBM Plex Sans	ibmplexsans	IBMPlexSans[wdth,wght].ttf
+Inter	inter	Inter[opsz,wght].ttf
+JetBrains Mono	jetbrainsmono	JetBrainsMono[wght].ttf
+Lato	lato	Lato-Regular.ttf;Lato-Bold.ttf;Lato-Black.ttf
+Libre Baskerville	librebaskerville	LibreBaskerville[wght].ttf
+Public Sans	publicsans	PublicSans[wght].ttf
+Sora	sora	Sora[wght].ttf
+Source Sans 3	sourcesans3	SourceSans3[wght].ttf
+Source Serif 4	sourceserif4	SourceSerif4[opsz,wght].ttf
+Space Grotesk	spacegrotesk	SpaceGrotesk[wght].ttf
+Space Mono	spacemono	SpaceMono-Regular.ttf;SpaceMono-Bold.ttf
+Work Sans	worksans	WorkSans[wght].ttf

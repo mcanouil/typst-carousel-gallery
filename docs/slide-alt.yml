@@ -1,0 +1,23 @@
+# Alt text for the six slides, shared by every template.
+#
+# Every template announces the same fictional release, so the six slides carry
+# the same words in every deck. Only the design changes. That makes one set of
+# descriptions correct for all of them, and keeps 24 copies of the same text out
+# of the repository.
+#
+# _scripts/pre-render.sh reads this file with a flat parser, so every value must
+# be a single-line scalar. A template that departs from the standard six slides
+# needs its own entry in gallery.yml; add the override there and here together.
+
+- slide: 1
+  alt: "Cover slide. The kicker reads Release, above the project name Acme Kit and the version 2.1.0, with the line Build every report from one command, in whatever format the reader asked for."
+- slide: 2
+  alt: "Slide headed Six scripts, four formats, one deadline. The text explains that every project grows its own build script, then a second for the slides and a third for print, that they drift, and that the one that matters is always the one nobody ran. A closing line reads: a build is a fact about a project, not a habit of the person who last shipped it."
+- slide: 3
+  alt: "Slide headed One command, every target. Two code blocks. The first is a targets configuration listing report as PDF on the release profile, slides as HTML on the talk profile, and archive as DOCX on the release profile. The second is the command acme build with the release profile flag."
+- slide: 4
+  alt: "Slide headed Three places it earns its keep. Three pairs: a report that ships monthly, so the December build is the January build; a paper and a talk from one source, so the slides cannot fall behind the manuscript; and a handover, where the build lives in the repository rather than in someone's head."
+- slide: 5
+  alt: "Slide headed What changed. Three labelled entries: New, profiles, one target set with several build shapes; New, incremental builds, rebuilding only targets whose inputs moved; and Fixed, relative paths now resolving from the project root on every platform. A closing line says upgrading is a version bump and existing target files keep working."
+- slide: 6
+  alt: "Closing slide headed Install and build, on a dark ground. It shows the install command, brew install acme-kit followed by acme init, then a link to the gallery repository at github.com/mcanouil/typst-carousel-gallery."

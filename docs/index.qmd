@@ -1,0 +1,167 @@
+---
+title: "Typst Carousel Gallery"
+subtitle: "Square carousel decks for social media, written in Typst."
+description: "Browse every carousel template in the gallery, grouped by the visual system it belongs to."
+toc: true
+toc-depth: 2
+authors:
+  - name: "Mickaël Canouil"
+    orcid: "0000-0002-3396-4549"
+    url: "https://mickael.canouil.fr"
+listing:
+  - id: gallery-editorial
+    template: assets/templates/_gallery.ejs.md
+    contents: gallery.yml
+    include:
+      family: editorial
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    page-size: 50
+  - id: gallery-terminal
+    template: assets/templates/_gallery.ejs.md
+    contents: gallery.yml
+    include:
+      family: terminal
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    page-size: 50
+  - id: gallery-technical
+    template: assets/templates/_gallery.ejs.md
+    contents: gallery.yml
+    include:
+      family: technical
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    page-size: 50
+  - id: gallery-dataviz
+    template: assets/templates/_gallery.ejs.md
+    contents: gallery.yml
+    include:
+      family: dataviz
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    page-size: 50
+  - id: gallery-panels
+    template: assets/templates/_gallery.ejs.md
+    contents: gallery.yml
+    include:
+      family: panels
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    page-size: 50
+  - id: gallery-control
+    template: assets/templates/_gallery.ejs.md
+    contents: gallery.yml
+    include:
+      family: control
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    page-size: 50
+  - id: gallery-poster
+    template: assets/templates/_gallery.ejs.md
+    contents: gallery.yml
+    include:
+      family: poster
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    page-size: 50
+  - id: gallery-screenshot
+    template: assets/templates/_gallery.ejs.md
+    contents: gallery.yml
+    include:
+      family: screenshot
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    page-size: 50
+---
+
+Twenty-four templates, each one Typst file that compiles to a six-slide square deck, 21 by 21 centimetres, the canvas LinkedIn and Bluesky show without cropping.
+
+There is no package to install and nothing to import.
+Copy the file, replace the project block at the top, and rewrite the slides.
+The templates share a vocabulary so that moving between them is easy, and they share nothing else, so a copy of one is complete on its own.
+
+All of them announce the same fictional release.
+The words are held constant on purpose: the only thing that changes from one template to the next is the design.
+
+Start with [using a template](get-started.qmd), or open any deck below and read its source.
+
+## Editorial
+
+Paper, a serif, and a single column.
+For an announcement that is an argument rather than a feature list.
+
+::: {#gallery-editorial}
+:::
+
+## Terminal
+
+Shell chrome and monospace as the leading voice.
+For something used from a command line.
+
+::: {#gallery-terminal}
+:::
+
+## Technical
+
+Grids, rules, and measurement marks.
+For engineering work that should read as a specification.
+
+::: {#gallery-technical}
+:::
+
+## Data visualisation
+
+A chart carries the slide, drawn from Typst primitives rather than a plotting package.
+For a release with a number that moved.
+
+::: {#gallery-dataviz}
+:::
+
+## Panels
+
+Content divided into cards or ruled rows.
+For a walkthrough, or a set of parallel points.
+
+::: {#gallery-panels}
+:::
+
+## Control
+
+A user interface metaphor: switches, crosshairs, a stepped ladder.
+For a release that turns something on, or replaces a manual step.
+
+::: {#gallery-control}
+:::
+
+## Poster
+
+Display type and one large motif.
+For short copy that can carry a slide on its own.
+
+::: {#gallery-poster}
+:::
+
+## Screenshot
+
+Framed product shots as the evidence.
+For an announcement about what the output looks like.
+
+::: {#gallery-screenshot}
+:::

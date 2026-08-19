@@ -1,0 +1,21 @@
+{
+  "name": "Typst Carousel Gallery",
+  "description": "A gallery of self-contained square Typst carousel templates for social media, with SVG and PDF output.",
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "/typst-carousel-gallery/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/typst-carousel-gallery/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#12181f",
+  "background_color": "#12181f",
+  "display": "standalone",
+  "start_url": "/typst-carousel-gallery/"
+}

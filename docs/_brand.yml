@@ -1,0 +1,43 @@
+meta:
+  name: Typst Carousel Gallery
+  link: https://m.canouil.dev/typst-carousel-gallery
+
+# The chrome is deliberately quiet. Every card on the gallery carries a deck in
+# its own palette, and twenty-four of them side by side is already a lot of
+# colour. One ink blue accent, near-neutral grounds, and nothing else.
+color:
+  palette:
+    ink: "#12181f"
+    slate: "#4a5563"
+    mist: "#e6e9ed"
+    bone: "#fbfaf8"
+    blue: "#1d5c9e"
+    sky: "#63a6e8"
+  primary:
+    light: blue
+    dark: sky
+  foreground:
+    light: ink
+    dark: "#e9edf2"
+  background:
+    light: bone
+    dark: "#12181f"
+  secondary: slate
+
+typography:
+  fonts:
+    - family: Inter
+      source: google
+      weight: [400, 500, 600, 700]
+    - family: JetBrains Mono
+      source: google
+      weight: [400, 600]
+  base:
+    family: Inter
+    line-height: 1.6
+  headings:
+    family: Inter
+    weight: 700
+  monospace: JetBrains Mono
+  link:
+    decoration: underline

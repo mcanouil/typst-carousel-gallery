@@ -1,0 +1,149 @@
+---
+title: "Reference"
+subtitle: "What every template shares, and what each one is free to change."
+description: "The contract every carousel template in the gallery obeys: page geometry, the bindings at the top of the file, and the shared helper names."
+---
+
+There is no library here.
+Each template is a single self-contained Typst file, and copying one gives you everything it needs.
+
+What holds the collection together is the contract on this page.
+`tools/lint-templates.sh` checks it, so a template that breaks it does not ship.
+
+## Fixed rules
+
+These protect legibility on a feed, or the reader's ability to act on the deck.
+They do not change from one template to the next.
+
+Page geometry
+: `21cm × 21cm`, margin `0cm`.
+  That is the 1:1 canvas LinkedIn and Bluesky show without cropping.
+  Pad inside a slide with `inset:` or `block(width: …)`; never shrink the page.
+
+Slide count
+: Six.
+  A cover, four content slides, and a closing slide carrying the links.
+
+Type size
+: Body text 14 pt or larger.
+  A slide has to read at about 250 pixels wide.
+  Cover headlines sit between 36 pt and 72 pt.
+
+Colour
+: No purple, lavender, violet, fuchsia, or magenta.
+
+Links
+: Every visible URL is a clickable `#link()`.
+  A bare URL in a PDF is dead text.
+
+Fonts
+: Only families vendored in `fonts/`.
+
+## The file skeleton
+
+Every template is laid out in this order, so knowing one is knowing all of them.
+
+```typst
+// <family>/<variant>: <one sentence on the visual angle>
+// Placeholder subject: Acme Kit 2.1.0. Replace the PROJECT block below.
+
+#set document(title: "Acme Kit 2.1.0", author: "Your Name")
+#set text(lang: "en")
+
+// --- PROJECT (replace these) ---
+#let project = "Acme Kit"
+#let version = "2.1.0"
+#let repo-url = "https://github.com/mcanouil/typst-carousel-gallery"
+#let date = "2026-01-01"
+
+// --- THEME ---
+#let ground = rgb("#…")   // page fill
+#let paper = rgb("#…")    // light panel
+#let ink = rgb("#…")      // body text
+#let muted = rgb("#…")    // secondary text
+#let hair = rgb("#…")     // rules and borders
+#let accent = rgb("#…")   // the one accent
+#let slab = rgb("#…")     // code background
+#let slab-fg = rgb("#…")  // code foreground
+
+#let display = "…"
+#let body = "…"
+#let mono = "…"
+
+#set page(width: 21cm, height: 21cm, margin: 0cm, fill: ground)
+#set text(font: body, fill: ink, size: 15.5pt)
+#set raw(theme: none)
+#show raw: set text(font: mono, ligatures: false)
+
+// --- HELPERS ---
+
+// --- SLIDES ---
+```
+
+All sixteen bindings are required, even in a template that leans on only a few.
+Someone adapting a deck should find the same names in the same place every time.
+
+## Shared helper names
+
+Where a template implements one of these ideas, it uses this name and this signature.
+The body is where the visual identity lives, and it is free.
+
+| Helper | Signature | What it is |
+| --- | --- | --- |
+| `url-link` | `(url)` | A clickable URL that prints as its own address. |
+| `kicker` | `(txt, tint: accent)` | The small tracked label above a headline. |
+| `chip` | `(txt, tint: accent)` | A boxed word: a status, a tag, a count. |
+| `code-slab` | `(body, size: 13pt, tint: accent)` | A code panel. |
+| `shot` | `(path, width: 100%)` | A framed screenshot. |
+| `footer` | `(n: none, total: 6)` | The rule and the line under it. |
+| `slide` | `(n: none, body)` | One page. |
+
+A template needs no helper it does not use, and must not rename one it does.
+
+Two ways of writing `slide()` are both correct:
+
+```typst
+#let slide(n: none, body) = page(fill: ground)[…]
+
+#let slide(n: none, body) = {
+  block(width: 100%, height: 100%)[…]
+  pagebreak(weak: true)
+}
+```
+
+The contract fixes the signature, not the mechanism.
+
+## Families
+
+A family is a visual system: what a slide is built out of.
+A variant is one answer within that system.
+Variants of one family share the structure and differ in palette, type, and motif.
+
+| Family | The system |
+| --- | --- |
+| `editorial` | Paper, a serif, and a single column. |
+| `terminal` | Shell chrome and monospace as the leading voice. |
+| `technical` | Grids, rules, and measurement marks. |
+| `dataviz` | A chart carries the slide. |
+| `panels` | Content divided into cards or ruled rows. |
+| `control` | A user-interface metaphor: switches, states, crosshairs. |
+| `poster` | Display type and one large motif. |
+| `screenshot` | Framed product shots as the evidence. |
+
+## The placeholder subject
+
+Every template announces the same fictional release, Acme Kit 2.1.0.
+
+That is deliberate.
+Holding the words constant makes the designs comparable, which is the point of a gallery.
+`Acme` is a well-understood stand-in, so no reader mistakes it for a real project, and every link points back at this repository so no template ships a dead URL.
+
+## Checking a template
+
+```bash
+bash tools/build.sh --png <family>/<variant>
+bash tools/lint-templates.sh <family>/<variant>
+```
+
+The lint checks the geometry, the bindings, the colours, the links, the fonts, and the catalogue entry.
+It cannot check that a slide looks right, so read the six PNGs as well.

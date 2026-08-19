@@ -1,0 +1,284 @@
+# The gallery catalogue. One entry per template.
+#
+# All values MUST be single-line scalars: _scripts/pre-render.sh reads this file
+# with a flat parser, not a YAML library.
+#
+# slug          <family>-<variant>, and the directory templates/<family>/<variant>.
+# family        Groups the listing on the home page.
+# family-title  The heading that group is shown under.
+# variant       The card title.
+# title         The page title, "<Family>, <variant>".
+# angle         One sentence on the visual angle. Shown on the card.
+# fonts         Display / body / mono, as the template names them.
+# palette       The palette in three or four words.
+# description   A paragraph for the template's own page.
+# href          The viewer page, relative to the home page. Listing items built
+#               from a YAML file carry no path of their own, so the card needs
+#               one to link to.
+#
+# tools/lint-templates.sh checks that every template is listed here and that
+# every entry here has a template.
+
+- slug: editorial-drop-cap
+  family: editorial
+  family-title: "Editorial"
+  variant: "Drop cap"
+  title: "Editorial, drop cap"
+  href: templates/editorial-drop-cap.html
+  angle: "Bone paper and gold rules, a serif column opening on a drop cap."
+  fonts: "Source Serif 4 / Source Sans 3 / JetBrains Mono"
+  palette: "Bone, ink, gold"
+  description: "A magazine column set on warm paper. Each slide opens on a small gold square and a hairline rule, then runs one idea down a single measure. The second slide carries the drop cap the variant is named for. Reach for it when the announcement is an argument rather than a feature list, and when you want the deck to read as writing rather than as marketing."
+
+- slug: editorial-column
+  family: editorial
+  family-title: "Editorial"
+  variant: "Column"
+  title: "Editorial, column"
+  href: templates/editorial-column.html
+  angle: "Ivory magazine column, pilcrow marks and miniature page previews."
+  fonts: "Libre Baskerville / Libre Baskerville / JetBrains Mono"
+  palette: "Ivory, ink, crimson"
+  description: "One serif does all the work here, at three sizes. A pilcrow opens every paragraph, and a miniature of a printed page sits beside the text with one ruled band tinted to mark what the slide is about. The fourth slide turns those miniatures into a row of three. Reach for it when the subject is documents, and you want the deck to look like the thing it is announcing."
+
+- slug: editorial-parchment
+  family: editorial
+  family-title: "Editorial"
+  variant: "Parchment"
+  title: "Editorial, parchment"
+  href: templates/editorial-parchment.html
+  angle: "Warm parchment and a quiet serif, over an oversized ghost numeral."
+  fonts: "EB Garamond / Lato / IBM Plex Mono"
+  palette: "Parchment, bark, forest green"
+  description: "The calmest deck in the family. A large old-style serif carries the headlines, a plain sans carries the body, and the only ornament is an enormous slide numeral sunk into the parchment on the right. It is set on the vertical centre rather than the page edge, because a glyph anchored to the bottom runs through the footer and Typst reports nothing. Reach for it when the tone is considered rather than urgent."
+
+- slug: terminal-shell
+  family: terminal
+  family-title: "Terminal"
+  variant: "Shell"
+  title: "Terminal, shell"
+  href: templates/terminal-shell.html
+  angle: "The whole deck is one shell session, prompt by prompt, with a blinking block cursor."
+  fonts: "JetBrains Mono / Inter / JetBrains Mono"
+  palette: "Near-black, mint, slate"
+  description: "Window chrome sits at the top of every slide, the deck opens on a command, and a block cursor closes the lines that are still being typed. Prose stays in a sans so the monospace keeps meaning code. Reach for it when the thing you are announcing is used from a terminal, and the command is the headline."
+
+- slug: terminal-mono
+  family: terminal
+  family-title: "Terminal"
+  variant: "Mono"
+  title: "Terminal, mono"
+  href: templates/terminal-mono.html
+  angle: "Monospace as the body voice, on paper, with syntax colour carrying the hierarchy."
+  fonts: "Archivo / IBM Plex Mono / IBM Plex Mono"
+  palette: "Warm white, rust, blue, green"
+  description: "The inverse of the shell variant: light ground, monospace prose, and a strip of coloured tokens along the top edge that repeats on every slide. Three hues code the three arguments on the fourth slide. Reach for it when you want the density of a code listing without the darkness of a terminal."
+
+- slug: terminal-window
+  family: terminal
+  family-title: "Terminal"
+  variant: "Window"
+  title: "Terminal, window"
+  href: templates/terminal-window.html
+  angle: "Titled code windows floating on graphite, each slide a labelled panel."
+  fonts: "IBM Plex Sans / IBM Plex Sans / IBM Plex Mono"
+  palette: "Graphite, amber, steel"
+  description: "Everything on the slide is a window with a name bar, so a file listing, a configuration file, and a paragraph of prose all read as the same object. The closing slide inverts to full amber. Reach for it when the announcement moves between several named files and you want the reader to keep track of which is which."
+
+- slug: technical-blueprint
+  family: technical
+  family-title: "Technical"
+  variant: "Blueprint"
+  title: "Technical, blueprint"
+  href: templates/technical-blueprint.html
+  angle: "A drawing board in deep blue, with a grid, tick marks, and a title block."
+  fonts: "Archivo / Inter / JetBrains Mono"
+  palette: "Deep blue, cyan"
+  description: "A one centimetre grid runs behind every slide, a ruler of ticks crosses the top edge, and a drawing title block in the bottom right carries the project, the revision, and the sheet number. The version is written as a revision. Reach for it when the subject is engineering work and you want the deck to read as a specification."
+
+- slug: technical-graph-paper
+  family: technical
+  family-title: "Technical"
+  variant: "Graph paper"
+  title: "Technical, graph paper"
+  href: templates/technical-graph-paper.html
+  angle: "Warm graph paper with a measured gutter, a ruler, and registration marks."
+  fonts: "Archivo / IBM Plex Sans / IBM Plex Mono"
+  palette: "Warm white, rust"
+  description: "A fine half-centimetre grid, a numbered ruler down the left edge, and printer's registration marks at the outer corners. The gutter is bound to one value at the top of the file, so moving it moves the ruler and the whole layout together. Reach for it when you want the technical family's rigour on light paper rather than on a dark board."
+
+- slug: technical-diagnostic
+  family: technical
+  family-title: "Technical"
+  variant: "Diagnostic"
+  title: "Technical, diagnostic"
+  href: templates/technical-diagnostic.html
+  angle: "Crop marks at the corners and a stage strip counting the frames."
+  fonts: "Inter / Inter / Fira Code"
+  palette: "Bone, ink, teal"
+  description: "Six named stages run along the top of every slide, with the current one lit, so the deck carries its own progress bar. Crop marks frame the page the way a proof sheet does, and the footer numbers frames rather than pages. Reach for it when the announcement is about a pipeline, and you want the reader to feel where in it each slide sits."
+
+- slug: dataviz-sparkline
+  family: dataviz
+  family-title: "Data visualisation"
+  variant: "Sparkline"
+  title: "Data visualisation, sparkline"
+  href: templates/dataviz-sparkline.html
+  angle: "A dark deck where a line chart, drawn from Typst primitives, carries the argument."
+  fonts: "Space Grotesk / Inter / Space Mono"
+  palette: "Midnight, sky blue, coral"
+  description: "The chart is the argument. A helper turns a series into a run of line segments, so there is no plotting package to install, and a compressed version of the same series repeats in every footer. The two series on the fourth slide are given one explicit scale, because a chart that normalises each line to its own range makes a comparison it has not earned. Reach for it when you have a number that moved."
+
+- slug: dataviz-ridgeline
+  family: dataviz
+  family-title: "Data visualisation"
+  variant: "Ridgeline"
+  title: "Data visualisation, ridgeline"
+  href: templates/dataviz-ridgeline.html
+  angle: "Stacked density bands run under every slide, the page motif and the chart at once."
+  fonts: "Sora / Public Sans / Space Mono"
+  palette: "Warm white, teal"
+  description: "Four overlapping density humps sit along the bottom edge of every slide, drawn as runs of thin bars so no path primitive is needed. The footer is set above them rather than on them. The same band shape shrinks into a bullet marker on the fourth slide. Reach for it when the subject is distributions, or when you want a soft deck that is still made of data."
+
+- slug: dataviz-figure-grid
+  family: dataviz
+  family-title: "Data visualisation"
+  variant: "Figure grid"
+  title: "Data visualisation, figure grid"
+  href: templates/dataviz-figure-grid.html
+  angle: "Small multiples: a grid of captioned figures carries each slide."
+  fonts: "Public Sans / Public Sans / Space Mono"
+  palette: "Cool grey, blue, red"
+  description: "Three chart shapes, bars, a line, and dots, each in a titled panel with a caption underneath, so every figure reads the same way. The line helper measures from zero rather than from the smallest value, so a series that does not vary plots as a flat line partway up instead of flat on the baseline where it looks broken. Reach for it when several small facts beat one big one."
+
+- slug: panels-card-stack
+  family: panels
+  family-title: "Panels"
+  variant: "Card stack"
+  title: "Panels, card stack"
+  href: templates/panels-card-stack.html
+  angle: "Tabbed cards on navy, each slide one card pulled from the stack."
+  fonts: "Work Sans / Work Sans / Fira Code"
+  palette: "Navy, off-white, orange"
+  description: "Two card edges peek out behind the front card, so the deck reads as a stack being worked through rather than a set of separate panels. The tab carries the section name. Large counters pick out the numbers. Reach for it when the announcement is a walkthrough and you want each slide to feel like the next page of one thing."
+
+- slug: panels-panel-grid
+  family: panels
+  family-title: "Panels"
+  variant: "Panel grid"
+  title: "Panels, panel grid"
+  href: templates/panels-panel-grid.html
+  angle: "Numbered panels laid on a dotted ground, two or three to a slide."
+  fonts: "Space Grotesk / Inter / IBM Plex Mono"
+  palette: "Near-black, mint"
+  description: "A fine dotted lattice sits behind everything, and the content lives in bordered panels with a numbered tab in the corner, so a grid of them still reads in order. The closing slide inverts to full mint. Reach for it when a slide carries two or three parallel points that should not be ranked."
+
+- slug: panels-ledger
+  family: panels
+  family-title: "Panels"
+  variant: "Ledger"
+  title: "Panels, ledger"
+  href: templates/panels-ledger.html
+  angle: "Ruled accounting rows on parchment, each point an entry with a stamped total."
+  fonts: "Archivo / Space Mono / Space Mono"
+  palette: "Parchment, oxblood"
+  description: "Horizontal rules every nine millimetres and a double red column rule down the left turn the page into an accounting sheet. Points are numbered entries. A rotated stamp marks the cover and the closing slide. Reach for it when the announcement is about record keeping, reproducibility, or anything that should feel written down."
+
+- slug: control-switchboard
+  family: control
+  family-title: "Control"
+  variant: "Switchboard"
+  title: "Control, switchboard"
+  href: templates/control-switchboard.html
+  angle: "Rows of switches, each slide a setting being turned on."
+  fonts: "Fira Sans / Inter / IBM Plex Mono"
+  palette: "Ink, amber"
+  description: "One shape does all the work: a rounded track with the knob at one end. The problem slide shows three switches off, the payoff slide shows three on, and the argument is carried by the state rather than by the words. Reach for it when the release turns something on, or replaces a manual step with a setting."
+
+- slug: control-crosshair
+  family: control
+  family-title: "Control"
+  variant: "Crosshair"
+  title: "Control, crosshair"
+  href: templates/control-crosshair.html
+  angle: "Chalk ground with crosshair marks pinning each idea, and state chips beside it."
+  fonts: "Inter / Inter / JetBrains Mono"
+  palette: "Chalk, ink, deep teal"
+  description: "A small open cross with a gap at its centre marks the four corners of every slide and pins each point on the payoff slide. Outlined chips carry states. The quietest deck in the family, and the one that works best when the subject is precision. Reach for it when the tone is measured and the reader is technical."
+
+- slug: control-cascade
+  family: control
+  family-title: "Control"
+  variant: "Cascade"
+  title: "Control, cascade"
+  href: templates/control-cascade.html
+  angle: "A stepped colour ladder runs down the page, one rung lit per slide."
+  fonts: "Lato / Lato / Fira Code"
+  palette: "White, cool to warm ladder"
+  description: "Six rungs run down the right edge, cool at the top and warm at the bottom, and the rung for the current slide extends to full width while the rest stay short. The slide's own accent is taken from its rung, so the whole deck shifts hue as it advances. Reach for it when the announcement has a sequence, and you want progress visible without a page number."
+
+- slug: poster-pulp
+  family: poster
+  family-title: "Poster"
+  variant: "Pulp"
+  title: "Poster, pulp"
+  href: templates/poster-pulp.html
+  angle: "Halftone dots, a starburst, and shouting display type."
+  fonts: "Bangers / Comic Neue / Space Mono"
+  palette: "Cream, scarlet, ink"
+  description: "A lattice of dots that grow towards one corner gives the print texture, and everything is outlined in heavy ink. The cover carries a starburst. The loudest deck in the gallery, and the only one that uses exclamation marks. Reach for it when the announcement is meant to be fun, and the audience will forgive the volume."
+
+- slug: poster-prism
+  family: poster
+  family-title: "Poster"
+  variant: "Prism"
+  title: "Poster, prism"
+  href: templates/poster-prism.html
+  angle: "An oversized rotated letter behind the type, one hue per slide."
+  fonts: "Fraunces / Work Sans / Fira Code"
+  palette: "Warm white, six-hue spectrum"
+  description: "A single enormous glyph, rotated and sunk almost to nothing, sits behind each slide, and a six-band spectrum along the bottom edge lights the band for the current slide. The accent walks the spectrum as the deck advances. Reach for it when you want a poster feel without shouting, and the subject has range rather than a single note."
+
+- slug: poster-feed
+  family: poster
+  family-title: "Poster"
+  variant: "Feed"
+  title: "Poster, feed"
+  href: templates/poster-feed.html
+  angle: "A full-bleed colour field per slide, one idea, set very large."
+  fonts: "Space Grotesk / Inter / IBM Plex Mono"
+  palette: "Near-black, ink blue, forest, coral"
+  description: "Each slide gets its own ground colour, so the deck reads as a run of posters rather than as one document. A short rule opens every slide and the headline is set as large as the words allow. The least furnished template in the gallery. Reach for it when the copy is short and strong enough to carry a slide on its own."
+
+- slug: screenshot-page-shot
+  family: screenshot
+  family-title: "Screenshot"
+  variant: "Page shot"
+  title: "Screenshot, page shot"
+  href: templates/screenshot-page-shot.html
+  angle: "A document band across the top, framed page shots as the evidence."
+  fonts: "Source Serif 4 / Source Sans 3 / JetBrains Mono"
+  palette: "Warm white, ink blue"
+  description: "A tinted band across the top of every slide files it by section, label, and number, the way a controlled document is filed. Shots sit in thin frames with a monospace caption underneath. Reach for it when the announcement is about what the output looks like, and the reader wants to see the page rather than read about it."
+
+- slug: screenshot-film-strip
+  family: screenshot
+  family-title: "Screenshot"
+  variant: "Film strip"
+  title: "Screenshot, film strip"
+  href: templates/screenshot-film-strip.html
+  angle: "Shots run along a perforated strip, captioned like contact prints."
+  fonts: "Archivo / Lato / Fira Code"
+  palette: "Bone, ink, burnt orange"
+  description: "A black band with perforations along both edges holds two or three shots side by side, with captions printed on the black. It turns a set of screenshots into one object, which is what makes a before and after comparison read as a sequence. Reach for it when you have several shots that belong together."
+
+- slug: screenshot-browser
+  family: screenshot
+  family-title: "Screenshot"
+  variant: "Browser"
+  title: "Screenshot, browser"
+  href: templates/screenshot-browser.html
+  angle: "Every slide sits inside a browser frame with a live address bar."
+  fonts: "Space Grotesk / Inter / JetBrains Mono"
+  palette: "Slate, white, cyan"
+  description: "The whole deck is a browser window, and the address changes from slide to slide so the reader is walked through a site. The address bar holds a real clickable link. The window sizes to its content rather than to a fixed height, because a fixed height plus a full-height body clips the last thing on the slide without any error. Reach for it when the thing being announced is a website."

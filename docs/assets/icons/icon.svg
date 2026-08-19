@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="site-icon-title">
+  <title id="site-icon-title">Typst Carousel Gallery</title>
+  <style>
+    @media (prefers-color-scheme: dark) { .mark { fill: #63a6e8; } }
+  </style>
+  <g class="mark" fill="#1d5c9e">
+    <rect x="5" y="2" width="22" height="22" rx="3.5"/>
+    <circle cx="16" cy="28" r="2"/>
+    <circle cx="9" cy="28" r="2" fill-opacity=".55"/>
+    <circle cx="23" cy="28" r="2" fill-opacity=".55"/>
+  </g>
+</svg>

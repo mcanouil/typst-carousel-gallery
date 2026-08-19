@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+
+# Built by `tools/build.sh --png`, for reading a deck slide by slide while
+# authoring it. The SVG files beside them are committed, because the website
+# serves those; the rasters are large and nothing consumes them.
+templates/**/slides/*.png

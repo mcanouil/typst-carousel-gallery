@@ -1,0 +1,37 @@
+// markdownlint configuration for this repository.
+// The listed rules are enforced and everything else is off, so an unlisted rule
+// cannot add noise. Run it with:
+//
+//   npx markdownlint-cli2 "**/*.md" "docs/**/*.qmd"
+{
+  "default": false,
+
+  "MD001": true, // heading-increment
+  "MD003": true, // heading-style
+  "MD004": true, // ul-style
+  "MD005": true, // list-indent
+  "MD007": { "indent": 2 }, // ul-indent, 2 spaces for Quarto
+  "MD009": true, // no-trailing-spaces
+  "MD010": true, // no-hard-tabs
+  "MD012": true, // no-multiple-blanks
+  "MD018": true, // no-missing-space-atx
+  "MD019": true, // no-multiple-space-atx
+  "MD022": true, // blanks-around-headings
+  "MD023": true, // heading-start-left
+  "MD025": true, // single-title
+  "MD026": true, // no-trailing-punctuation
+  "MD030": true, // list-marker-space
+  "MD031": true, // blanks-around-fences
+  "MD032": true, // blanks-around-lists
+  "MD037": true, // no-space-in-emphasis
+  "MD038": true, // no-space-in-code
+  "MD039": true, // no-space-in-links
+  "MD040": true, // fenced-code-language
+  "MD045": true, // no-alt-text, images need alt text for screen readers
+  "MD046": true, // code-block-style
+  "MD047": true // single-trailing-newline
+
+  // MD013 (line-length) and MD033 (inline HTML) stay off: long lines are not
+  // enforced, and inline HTML is needed for Quarto shortcodes.
+  // MD006 was removed upstream and has no entry here.
+}
